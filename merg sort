@@ -1,0 +1,42 @@
+#include<stdio.h>
+#define max 10
+int a[9]={2,6,8,3,10,17,18,13,5};
+int b[8];
+void merging(int low,int mid,int high){
+	int x,y,i;
+	for(x=low,y=mid+1,i=low;x<=mid && y<=high;i++){
+		if(a[x]<=a[y])
+		b[i]=a[x++];
+		else
+		b[i]=a[y++];	
+		}
+		while(x<=mid)
+		b[i++]=a[x++];
+		while(y<=high)
+		b[i++]=a[y++];
+		for(i=low;i<=high;i++)
+		a[i]=b[i];
+		}
+		void sort(int low,int high){
+			int mid;
+			if(low<high){
+				mid=(low+high)/2;
+				sort(low,mid);
+				sort(mid+1,high);
+				merging(low,mid,high);
+			}
+			else
+			{
+				return;
+			}
+		}
+		int main(){
+			int i;
+			printf("list before sorting\n");
+			for(i=0;i<=max;i++)
+			printf("%d",a[i]);
+			sort(0,max);
+			printf("\n list after sorting\n");
+			for(i=0;i<=max;i++)
+			printf("%d",a[i]);
+		}
