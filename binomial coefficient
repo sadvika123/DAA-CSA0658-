@@ -1,0 +1,16 @@
+#include<stdio.h>
+int bc(int n,int k)
+{
+	if(k>n)
+	return 0;
+	if(k==0||k==n)
+	return 1;
+	return bc(n-1,k-1)
+	+bc(n-1,k);
+}
+int main()
+{
+	int n=7,k=4;
+	printf("value of c(%d,%d) is %d",n,k,bc(n,k));
+	return 0;
+}
