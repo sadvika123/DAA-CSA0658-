@@ -1,0 +1,17 @@
+a=[1,2,4,7]
+b=[2,4,5,6]
+c=[8,9,7,6]
+d=[4,9,3,5]
+print("person 1: ",min(a))
+e=a.index(min(a))
+del b[e]
+print("person 2: ",min(b))
+f=b.index(min(b))
+del c[e]
+del c[f]
+print("person 3: ",min(c))
+g=c.index(min(c))
+del d[e]
+del d[f]
+del d[g]
+print("person 4: ",min(d))
